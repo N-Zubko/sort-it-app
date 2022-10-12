@@ -27,7 +27,7 @@ function Board() {
     <>
       {wasteDisplay.length > 0 && (
         <div
-          className="flex justify-center content-end items-end h-24 mb-3"
+          className="flex flex-col items-center h-24 mb-3"
           // style={{
           //   display: 'flex',
           //   justifyContent: 'center',
@@ -72,7 +72,7 @@ function Board() {
             wasteDisplay={wasteDisplay}
             reduceWasteDisplay={reduceWasteDisplay}
           />
-          <p>Landfill</p>
+          <p>Landfill drop-off</p>
         </div>
       </div>
     </>
