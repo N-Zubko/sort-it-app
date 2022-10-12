@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { useDrop } from 'react-dnd';
 import { wasteToSort, ItemTypes } from './ItemTypes';
 import WasteItem from './WasteItem';
+import BlackbinImage from '../pictures/black-bin_.png';
+
+const style = {
+  height: '12rem',
+};
 
 export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
   const [blackBin, setBlackBin] = useState([]);
@@ -25,30 +30,36 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
   };
 
   return (
-    <div
-      className="blueBin"
+    <img
+      src={BlackbinImage}
+      alt="Black cart for garbage"
       ref={drop}
-      style={{
-        backgroundColor: 'black',
-        color: 'white',
-        width: '8rem',
-        height: '12rem',
-        marginTop: '10rem',
-        textAlign: 'center',
-        lineHeight: '2em',
-      }}
-    >
-      {blackBin.map((pic) => {
-        return (
-          <WasteItem
-            key={pic.id}
-            url={pic.url}
-            id={pic.id}
-            wasteType={pic.wasteType}
-            description={pic.description}
-          />
-        );
-      })}
-    </div>
+      style={style}
+    />
+    // <div
+    //   className="blueBin"
+    //   ref={drop}
+    //   style={{
+    //     backgroundColor: 'black',
+    //     color: 'white',
+    //     width: '8rem',
+    //     height: '12rem',
+    //     marginTop: '10rem',
+    //     textAlign: 'center',
+    //     lineHeight: '2em',
+    //   }}
+    // >
+    //   {/* {blackBin.map((pic) => {
+    //     return (
+    //       <WasteItem
+    //         key={pic.id}
+    //         url={pic.url}
+    //         id={pic.id}
+    //         wasteType={pic.wasteType}
+    //         description={pic.description}
+    //       />
+    //     );
+    //   })} */}
+    // </div>
   );
 }

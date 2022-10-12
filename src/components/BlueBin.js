@@ -2,16 +2,10 @@ import { useState } from 'react';
 import { useDrop } from 'react-dnd';
 import { wasteToSort, ItemTypes } from './ItemTypes';
 import WasteItem from './WasteItem';
+import BluebinImage from '../pictures/blue-bin_.png';
 
 const style = {
-  backgroundColor: 'blue',
-  color: 'white',
-  width: '8rem',
   height: '12rem',
-  maxHeight: 'fit-content',
-  marginTop: '10rem',
-  textAlign: 'center',
-  lineHeight: '2em',
 };
 
 export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
@@ -37,18 +31,24 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
   };
 
   return (
-    <div className="blueBin" ref={drop} style={{ ...style }}>
-      {blueBin.map((pic) => {
-        return (
-          <WasteItem
-            key={pic.id}
-            url={pic.url}
-            id={pic.id}
-            wasteType={pic.wasteType}
-            description={pic.description}
-          />
-        );
-      })}
-    </div>
+    <img
+      src={BluebinImage}
+      alt="Blue cart for recyclable waste"
+      ref={drop}
+      style={style}
+    />
+    // <div className="blueBin" ref={drop} style={{ ...style }}>
+    //   {/* {blueBin.map((pic) => {
+    //     return (
+    //       <WasteItem
+    //         key={pic.id}
+    //         url={pic.url}
+    //         id={pic.id}
+    //         wasteType={pic.wasteType}
+    //         description={pic.description}
+    //       />
+    //     );
+    //   })} */}
+    // </div>
   );
 }
