@@ -5,7 +5,7 @@ const style = {
   height: '4em',
 };
 
-function WasteItem({ id, description, url, wasteType }) {
+function WasteItem({ id, name, description, url, wasteType }) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: wasteType,
     item: { id: id },
@@ -19,7 +19,7 @@ function WasteItem({ id, description, url, wasteType }) {
       ref={drag}
       src={url}
       id={id}
-      alt={description}
+      alt={name}
       style={{ ...style, opacity: isDragging && 0.3 }}
     />
   );
