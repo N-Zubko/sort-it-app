@@ -1,0 +1,4 @@
+.bin-container {
+  display: flex;
+  flex-direction: row;
+}

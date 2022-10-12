@@ -1,32 +1,22 @@
 import styles from '../styles/pages/Dashboard.module.css';
-
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import WasteItem from '../components/WasteItem';
+import Board from '../components/Board';
 
 const Dashboard = () => {
   const { user } = useOutletContext();
 
   return (
     <>
-      <Helmet>
-        <title>Dashboard - Nhost</title>
-      </Helmet>
-
-      <div>
-        <h2 className={styles.title}>Dashboard</h2>
-
-        <p className={styles['welcome-text']}>
-          Welcome, {user?.metadata?.firstName || 'stranger'}{' '}
-          <span role="img" alt="hello">
-            👋
-          </span>
-        </p>
-
-        <p className={styles['info-text']}>
-          Edit the <code>src/pages/Dashboard.js</code> file to populate this
-          page.
-        </p>
-      </div>
+      <DndProvider backend={HTML5Backend}>
+        <Helmet>
+          <title>Dashboard - Nhost</title>
+        </Helmet>
+        <Board />
+      </DndProvider>
     </>
   );
 };

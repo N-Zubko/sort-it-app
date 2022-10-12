@@ -3,6 +3,8 @@ import styles from '../styles/components/Layout.module.css';
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
+import { useSignOut } from '@nhost/react';
+
 import {
   ChevronDownIcon,
   HomeIcon,
@@ -13,6 +15,8 @@ import Avatar from './Avatar';
 
 const Layout = () => {
   const user = null;
+
+  const { signOut } = useSignOut();
 
   const menuItems = [
     {
@@ -27,14 +31,14 @@ const Layout = () => {
     },
     {
       label: 'Logout',
-      onClick: () => null,
+      onClick: signOut,
       icon: LogoutIcon,
     },
   ];
 
   return (
     <div>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <div className={styles['header-container']}>
           <Link to="/">
             <img src={process.env.PUBLIC_URL + 'logo.svg'} alt="logo" />
@@ -86,7 +90,7 @@ const Layout = () => {
             </Transition>
           </Menu>
         </div>
-      </header>
+      </header> */}
 
       <main className={styles.main}>
         <div className={styles['main-container']}>
