@@ -11,6 +11,7 @@ const style = {
 
 export default function Landfill({ reduceWasteDisplay, wasteDisplay }) {
   const [landfill, setLandfill] = useState([]);
+  const [itemAdded, setItemAdded] = useState(false);
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'landfill',
@@ -21,11 +22,14 @@ export default function Landfill({ reduceWasteDisplay, wasteDisplay }) {
   }));
 
   const addItemToBin = (id) => {
+    setItemAdded(true);
     const toSort = wasteDisplay.filter((picture) => id === picture.id);
     reduceWasteDisplay(id);
     // show all items added
     setLandfill((board) => [...board, toSort[0]]);
-
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 1500);
     //show only one
     // setLandfill([toSort[0]]);
   };
@@ -36,6 +40,7 @@ export default function Landfill({ reduceWasteDisplay, wasteDisplay }) {
       alt="Truck for waste to be dropped at landfills"
       style={style}
       ref={drop}
+      className={itemAdded && 'hover:scale-125'}
     />
     // <div className="bin" ref={drop} style={style}>
     //   {/* {landfill.map((pic) => {

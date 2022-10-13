@@ -10,6 +10,7 @@ const style = {
 
 export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
   const [blackBin, setBlackBin] = useState([]);
+  const [itemAdded, setItemAdded] = useState(false);
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'garbage',
@@ -21,10 +22,13 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
 
   const addItemToBin = (id) => {
     const toSort = wasteDisplay.filter((picture) => id === picture.id);
+    setItemAdded(true);
     reduceWasteDisplay(id);
     // show all items added
     setBlackBin((board) => [...board, toSort[0]]);
-
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 1500);
     //show only one
     // setBlackBin([toSort[0]]);
   };
@@ -35,6 +39,7 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
       alt="Black cart for garbage"
       ref={drop}
       style={style}
+      className={itemAdded && 'hover:scale-125'}
     />
     // <div
     //   className="blueBin"
