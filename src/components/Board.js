@@ -1,10 +1,12 @@
+import { useState, useEffect } from 'react';
+
 import WasteItem from './WasteItem';
 import BlueBin from './BlueBin';
 import BlackBin from './BlackBin';
 import GreenBin from './GreenBin';
 import Landfill from './Landfill';
 import { wasteToSort } from './ItemTypes';
-import { useState, useEffect } from 'react';
+import BackgroundImage from '../pictures/background.jpg';
 
 function Board() {
   const [wasteDisplay, setWasteDisplay] = useState([...wasteToSort]);
@@ -24,16 +26,12 @@ function Board() {
   }, []);
 
   return (
-    <>
-      {wasteDisplay.length > 0 && (
-        <div
-          className="flex flex-col items-center h-24 mb-3"
-          // style={{
-          //   display: 'flex',
-          //   justifyContent: 'center',
-          //   marginBottom: '5rem',
-          // }}
-        >
+    <div
+      className="flex flex-col justify-center content-end h-screen w-screen"
+      style={{ backgroundImage: `url(${BackgroundImage})` }}
+    >
+      {wasteDisplay.length > 0 ? (
+        <div className="flex flex-col items-center justify-center self-center w-40 h-40 rounded-full bg-slate-50 hover:bg-emerald-100 mb-56">
           <WasteItem
             key={wasteDisplay[0].id}
             url={wasteDisplay[0].url}
@@ -41,41 +39,47 @@ function Board() {
             wasteType={wasteDisplay[0].wasteType}
             name={wasteDisplay[0].name}
           />
-          <p className="text-center">{wasteDisplay[0].name}</p>
+          <span className="text-center mt-2 bg-white pl-2 pr-2">
+            {wasteDisplay[0].name}
+          </span>
         </div>
+      ) : (
+        <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-80">
+          ALL DONE!
+        </span>
       )}
 
       <div className="flex flex-row flex-wrap justify-center content-end items-end">
-        <div className="text-center">
-          <BlueBin
-            wasteDisplay={wasteDisplay}
-            reduceWasteDisplay={reduceWasteDisplay}
-          />
-          <p>Blue Cart</p>
-        </div>
-        <div className="text-center">
-          <BlackBin
-            wasteDisplay={wasteDisplay}
-            reduceWasteDisplay={reduceWasteDisplay}
-          />
-          <p>Black Cart</p>
-        </div>
-        <div className="text-center">
-          <GreenBin
-            wasteDisplay={wasteDisplay}
-            reduceWasteDisplay={reduceWasteDisplay}
-          />
-          <p>Green Cart</p>
-        </div>
-        <div className="text-center ml-2">
+        <div className="text-center mr-1 drop-shadow-lg">
           <Landfill
             wasteDisplay={wasteDisplay}
             reduceWasteDisplay={reduceWasteDisplay}
           />
-          <p>Landfill drop-off</p>
+          <span className="bg-white pl-2 pr-2">Landfill drop-off</span>
+        </div>
+        <div className="text-center drop-shadow-lg">
+          <BlueBin
+            wasteDisplay={wasteDisplay}
+            reduceWasteDisplay={reduceWasteDisplay}
+          />
+          <span className="bg-white pl-2 pr-2">Blue Cart</span>
+        </div>
+        <div className="text-center drop-shadow-lg">
+          <BlackBin
+            wasteDisplay={wasteDisplay}
+            reduceWasteDisplay={reduceWasteDisplay}
+          />
+          <span className="bg-white pl-2 pr-2 ">Black Cart</span>
+        </div>
+        <div className="text-center drop-shadow-lg">
+          <GreenBin
+            wasteDisplay={wasteDisplay}
+            reduceWasteDisplay={reduceWasteDisplay}
+          />
+          <span className="bg-white pl-2 pr-2">Green Cart</span>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
