@@ -1,11 +1,17 @@
+# Sort_it!
+
+
+## Description
+
 <strong>Sort_it!</strong> is an educational waste sorting application aimed at teaching users on which bin to choose to dispose of their waste. Based on waste sorting rules in the city of Calgary, AB, Canada.
 
-🚧 WIP 🚧 Current state: 
+## 🚧 WIP 🚧 Current state: 
 
 <img width="926" alt="Screen Shot of Sort_it! waste sorting game" src="https://user-images.githubusercontent.com/63440229/195507808-5fb6dd90-264f-4181-ac76-e005ccafce2f.png">
 
+## Plans
 
-| #   | Plans                       | Status |
+| #   | Ideas                       | Status |
 | --- | -------------------------- | -- |
 |  1  | Add navigation with links to Play, Learn and About pages |             |
 | 2  | Add a timer, which will start when Start button is clicked |             |
@@ -17,3 +23,9 @@
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use |             |
 | 9   | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
 | 10  | Netlify to deploy the front-end part of the appt |             |
+
+## Sorting in action:
+
+https://user-images.githubusercontent.com/63440229/195511187-9b056cb6-e2a5-469c-84c9-9e423eadfe5f.mov
+
+
