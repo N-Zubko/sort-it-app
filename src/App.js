@@ -7,6 +7,8 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import About from './pages/About';
+import Learn from './pages/Learn';
 
 import { NhostClient, NhostReactProvider } from '@nhost/react';
 
@@ -33,6 +35,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="profile" element={<Profile />} />
           </Route>
+          <Route path="about" element={<About />} />
+          <Route path="learn" element={<Learn />} />
         </Routes>
       </BrowserRouter>
       <Toaster />
