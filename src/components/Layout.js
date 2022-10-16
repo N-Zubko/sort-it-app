@@ -1,5 +1,6 @@
 import styles from '../styles/components/Layout.module.css';
 
+import Navigation from './Navigation';
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
@@ -91,7 +92,7 @@ const Layout = () => {
           </Menu>
         </div>
       </header> */}
-
+      <Navigation />
       <main className={styles.main}>
         <div className={styles['main-container']}>
           <Outlet context={{ user }} />
