@@ -13,7 +13,7 @@
 
 | #   | Ideas                       | Status |
 | --- | -------------------------- | -- |
-|  1  | Add navigation with links to Play, Learn and About pages |             |
+|  1  | Add navigation with links to Play, Learn and About pages |:heavy_check_mark:|
 | 2  | Add a timer, which will start when Start button is clicked |             |
 | 3  | Timer is stopped when Stop is clicked or all items have been sorted out|             |
 | 4  | Restart button restarts the array and time  |             |
@@ -23,7 +23,7 @@
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use |             |
 | 9   | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
 | 10  | Netlify to deploy the front-end part of the appt |             |
-| 11  | Add favicon and change title | :heavy_check_mark: |
+| 11  | Add favicon and change title | :heavy_check_mark:|
 
 ## Sorting in action:
 
