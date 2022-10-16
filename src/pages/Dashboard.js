@@ -5,6 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import WasteItem from '../components/WasteItem';
 import Board from '../components/Board';
+import Timer from '../components/Timer';
 
 const Dashboard = () => {
   const { user } = useOutletContext();
@@ -15,6 +16,7 @@ const Dashboard = () => {
         <Helmet>
           <title>Dashboard - Nhost</title>
         </Helmet>
+        <Timer />
         <Board />
       </DndProvider>
     </>
