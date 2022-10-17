@@ -11,7 +11,7 @@ const Dashboard = () => {
   const { user } = useOutletContext();
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center">
       <DndProvider backend={HTML5Backend}>
         <Helmet>
           <title>Dashboard - Nhost</title>
@@ -19,7 +19,7 @@ const Dashboard = () => {
         <Timer />
         <Board />
       </DndProvider>
-    </>
+    </div>
   );
 };
 
