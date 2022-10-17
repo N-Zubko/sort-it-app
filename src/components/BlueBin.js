@@ -33,8 +33,6 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
     // setBlueBin([toSort[0]]);
   };
 
-  console.log('itemAdded', itemAdded);
-
   return (
     <img
       src={BluebinImage}
