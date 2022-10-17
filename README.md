@@ -16,7 +16,7 @@
 |  1  | Add navigation with links to Play, Learn and About pages |:heavy_check_mark:|
 | 2  | Add a timer, which will start when Start button is clicked | :heavy_check_mark:|
 | 3  | Timer is stopped when Stop is clicked or all items have been sorted out|             |
-| 4  | Restart button restarts the array and time  |             |
+| 4  | Restart button restarts the array and time  | :heavy_check_mark:|
 | 5   | Sounds can be turned on/off |             |
 | 6   | When item is put into the right cart, there is a success sound and animation |             |
 | 7   | The time result can be stored and displayed on the board |             |
