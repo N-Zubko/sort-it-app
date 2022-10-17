@@ -5,6 +5,8 @@ import BlueBin from './BlueBin';
 import BlackBin from './BlackBin';
 import GreenBin from './GreenBin';
 import Landfill from './Landfill';
+import Timer from './Timer';
+
 import { wasteToSort } from './ItemTypes';
 import BackgroundImage from '../pictures/background.jpg';
 
@@ -30,6 +32,8 @@ function Board() {
       className="flex flex-col justify-center content-end h-screen w-screen"
       style={{ backgroundImage: `url(${BackgroundImage})` }}
     >
+      <Timer />
+
       {wasteDisplay.length > 0 ? (
         <div className="flex flex-col items-center justify-center self-center w-40 h-40 rounded-full bg-slate-50 hover:bg-emerald-100 mb-56">
           <WasteItem
