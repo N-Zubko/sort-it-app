@@ -7,7 +7,8 @@
 
 ## 🚧 WIP 🚧 Current state: 
 
-<img width="926" alt="Screen Shot of Sort_it! waste sorting game" src="https://user-images.githubusercontent.com/63440229/195507808-5fb6dd90-264f-4181-ac76-e005ccafce2f.png">
+<img width="879" alt="Screen Shot of Sort_it! waste sorting game" src="https://user-images.githubusercontent.com/63440229/196291771-4617b223-8c3a-45ae-aaa0-226269a965db.png">
+
 
 ## Plans
 
