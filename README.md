@@ -14,7 +14,7 @@
 | #   | Ideas                       | Status |
 | --- | -------------------------- | -- |
 |  1  | Add navigation with links to Play, Learn and About pages |:heavy_check_mark:|
-| 2  | Add a timer, which will start when Start button is clicked |             |
+| 2  | Add a timer, which will start when Start button is clicked | :heavy_check_mark:|
 | 3  | Timer is stopped when Stop is clicked or all items have been sorted out|             |
 | 4  | Restart button restarts the array and time  |             |
 | 5   | Sounds can be turned on/off |             |
