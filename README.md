@@ -22,7 +22,7 @@
 | 7   | The time result can be stored and displayed on the board |             |
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use |             |
 | 9   | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
-| 10  | Netlify to deploy the front-end part of the appt |             |
+| 10  | Netlify/Railway to deploy the front-end part of the app |             |
 | 11  | Add favicon and change title | :heavy_check_mark:|
 
 ## Sorting in action:
