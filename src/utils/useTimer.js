@@ -1,7 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useContext } from 'react';
 import { interval } from './interval';
+import { Context } from '../components/Context';
+import { wasteToSort } from '../components/ItemTypes';
 
 const use1Second = interval(1e3);
+const newWasteArray = [...wasteToSort];
 
 export const useTimer = ({
   seconds: initialSeconds = 0,
@@ -9,20 +12,25 @@ export const useTimer = ({
 } = {}) => {
   const [seconds, setSeconds] = useState(initialSeconds);
   const [running, setRunning] = useState(initiallyRunning);
+  const { startSorting, setStartSorting } = useContext(Context);
+  const { wasteDisplay, setWasteDisplay } = useContext(Context);
   const tick = useCallback(
     () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
     [running]
   );
   const start = () => {
     setRunning(true);
-    //make the waste array appear
+    setStartSorting(true);
   };
   const pause = () => setRunning(false);
-  const reset = () => setSeconds(0);
+  const reset = () => {
+    setSeconds(0);
+    setWasteDisplay(newWasteArray);
+  };
   const stop = () => {
-    //make the waste array disappear
     pause();
     reset();
+    setStartSorting(false);
   };
 
   use1Second(tick);
