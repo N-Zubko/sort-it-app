@@ -13,10 +13,14 @@ export const useTimer = ({
     () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
     [running]
   );
-  const start = () => setRunning(true);
+  const start = () => {
+    setRunning(true);
+    //make the waste array appear
+  };
   const pause = () => setRunning(false);
   const reset = () => setSeconds(0);
   const stop = () => {
+    //make the waste array disappear
     pause();
     reset();
   };
