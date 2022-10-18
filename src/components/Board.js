@@ -11,35 +11,42 @@ import { Context } from './Context.js';
 import { wasteToSort } from './ItemTypes';
 import BackgroundImage from '../pictures/background.jpg';
 
-const newWasteArray = [...wasteToSort];
+let newWasteArray = [...wasteToSort];
 
-//TODO: when the array is empty, the whole timer should stop
-//TODO: when Start is clicked, the array and the bins are refreshed
 function Board() {
   const [startSorting, setStartSorting] = useState(false);
-  const [wasteDisplay, setWasteDisplay] = useState([...wasteToSort]);
+  const [wasteDisplay, setWasteDisplay] = useState([]);
+  const [itemAdded, setItemAdded] = useState(false);
+
   const reduceWasteDisplay = (id) => {
-    const indexOfObject = wasteToSort.findIndex((object) => {
+    const indexOfObject = newWasteArray.findIndex((object) => {
       return object.id === id;
     });
     if (indexOfObject > -1) {
-      wasteToSort.splice(indexOfObject, 1);
+      newWasteArray.splice(indexOfObject, 1);
     }
-    setWasteDisplay([...wasteToSort]);
+    setWasteDisplay([...newWasteArray]);
     return;
   };
 
   useEffect(() => {
-    setWasteDisplay([...wasteToSort]);
-  }, []);
-
-  // useEffect(() => {
-  //   setWasteDisplay(newWasteArray);
-  // }, [wasteDisplay.length === 0]);
+    if (newWasteArray.length > 0) {
+      setWasteDisplay([...newWasteArray]);
+    } else {
+      newWasteArray = [...wasteToSort];
+    }
+  }, [itemAdded, startSorting]);
 
   return (
     <Context.Provider
-      value={{ startSorting, setStartSorting, wasteDisplay, setWasteDisplay }}
+      value={{
+        startSorting,
+        setStartSorting,
+        wasteDisplay,
+        setWasteDisplay,
+        itemAdded,
+        setItemAdded,
+      }}
     >
       <div
         className="flex flex-col justify-center content-end h-screen w-screen"
