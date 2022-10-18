@@ -34,8 +34,9 @@ function Board() {
       setWasteDisplay([...newWasteArray]);
     } else {
       newWasteArray = [...wasteToSort];
+      setStartSorting(false);
     }
-  }, [itemAdded, startSorting]);
+  }, [itemAdded]);
 
   return (
     <Context.Provider
