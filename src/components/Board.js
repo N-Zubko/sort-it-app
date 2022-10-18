@@ -13,6 +13,8 @@ import BackgroundImage from '../pictures/background.jpg';
 
 const newWasteArray = [...wasteToSort];
 
+//TODO: when the array is empty, the whole timer should stop
+//TODO: when Start is clicked, the array and the bins are refreshed
 function Board() {
   const [startSorting, setStartSorting] = useState(false);
   const [wasteDisplay, setWasteDisplay] = useState([...wasteToSort]);
@@ -31,9 +33,9 @@ function Board() {
     setWasteDisplay([...wasteToSort]);
   }, []);
 
-  useEffect(() => {
-    setWasteDisplay(newWasteArray);
-  }, [wasteDisplay.length === 0]);
+  // useEffect(() => {
+  //   setWasteDisplay(newWasteArray);
+  // }, [wasteDisplay.length === 0]);
 
   return (
     <Context.Provider
@@ -45,7 +47,7 @@ function Board() {
       >
         <Timer />
         {wasteDisplay.length > 0 && startSorting ? (
-          <div className="flex flex-col items-center justify-center self-center w-40 h-40 rounded-full bg-slate-50 hover:bg-emerald-100 mb-56">
+          <div className="flex flex-col items-center justify-center self-center w-40 h-40 rounded-full bg-slate-50 hover:bg-emerald-100 mb-28">
             <WasteItem
               key={wasteDisplay[0].id}
               url={wasteDisplay[0].url}
@@ -58,11 +60,11 @@ function Board() {
             </span>
           </div>
         ) : !startSorting ? (
-          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-80">
+          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-52">
             Click Start
           </span>
         ) : (
-          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-80">
+          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-52">
             ALL DONE!
           </span>
         )}
