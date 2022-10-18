@@ -25,7 +25,7 @@ const Timer = () => {
           stop
         </button>
       </div>
-      <p id="counter" className="bg-white pl-4 pr-4">
+      <p id="counter" className="bg-white pl-4 pr-4 mt-2">
         {seconds}
       </p>
     </div>
