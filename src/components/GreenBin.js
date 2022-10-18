@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useDrop } from 'react-dnd';
 import { wasteToSort, ItemTypes } from './ItemTypes';
 import WasteItem from './WasteItem';
+import { Context } from './Context';
+
 import GreenbinImage from '../pictures/green-bin_.png';
 
 const style = {
@@ -10,7 +12,7 @@ const style = {
 
 export default function GreenBin({ reduceWasteDisplay, wasteDisplay }) {
   const [greenBin, setGreenBin] = useState([]);
-  const [itemAdded, setItemAdded] = useState(false);
+  const { itemAdded, setItemAdded } = useContext(Context);
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'compost',
