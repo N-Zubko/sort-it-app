@@ -4,7 +4,6 @@ import { Context } from '../components/Context';
 import { wasteToSort } from '../components/ItemTypes';
 
 const use1Second = interval(1e3);
-const newWasteArray = [...wasteToSort];
 
 export const useTimer = ({
   seconds: initialSeconds = 0,
@@ -13,7 +12,6 @@ export const useTimer = ({
   const [seconds, setSeconds] = useState(initialSeconds);
   const [running, setRunning] = useState(initiallyRunning);
   const { startSorting, setStartSorting } = useContext(Context);
-  const { wasteDisplay, setWasteDisplay } = useContext(Context);
   const tick = useCallback(
     () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
     [running]
@@ -25,7 +23,6 @@ export const useTimer = ({
   const pause = () => setRunning(false);
   const reset = () => {
     setSeconds(0);
-    setWasteDisplay(newWasteArray);
   };
   const stop = () => {
     pause();
