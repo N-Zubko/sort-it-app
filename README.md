@@ -21,14 +21,16 @@
 | 2  | Add a timer, which will start when Start button is clicked | :heavy_check_mark:|
 | 3  | Timer is stopped when Stop is clicked or all items have been sorted out | :heavy_check_mark:|
 | 4  | Restart button restarts the array and time  | :heavy_check_mark:|
-| 5   | Sounds can be turned on/off |             |
-| 6   | When item is put into the right cart, there is a success sound and animation |             |
+| 5   | Sounds for game start, success and waste dropped | :heavy_check_mark:|
+| 6   | Animation when item is put into the right cart | :heavy_check_mark:|
 | 7   | Time result can is displayed on the board | :heavy_check_mark:|
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use |             |
 | 9   | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
 | 10  | Netlify/Railway to deploy the front-end part of the app |             |
 | 11  | Add favicon and change title | :heavy_check_mark:|
 | 12  | Time result is stored and top 10 results are displayed |  |
+| 13  | Sounds can be turned on/off |             |
+
 
 
 ## Sorting in action:
