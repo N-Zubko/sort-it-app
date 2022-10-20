@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useSound from 'use-sound';
 
 import WasteItem from './WasteItem';
 import BlueBin from './BlueBin';
@@ -11,9 +12,12 @@ import Modal from './Modal';
 import { Context } from './Context.js';
 
 import { wasteToSort } from './ItemTypes';
+
 import BackgroundImage from '../pictures/background.jpg';
 import DropSound from '../sounds/falling_garbage.wav';
-import useSound from 'use-sound';
+import TadaSound from '../sounds/tada.wav';
+import WasteSound from '../sounds/waste.mp3';
+
 let newWasteArray = [...wasteToSort];
 
 function Board() {
@@ -22,7 +26,8 @@ function Board() {
   const [itemAdded, setItemAdded] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [seconds, setSeconds] = useState(0);
-  const [playDrop] = useSound(DropSound);
+  const [playDrop] = useSound(WasteSound);
+  const [playTada] = useSound(TadaSound);
 
   const reduceWasteDisplay = (id) => {
     const indexOfObject = newWasteArray.findIndex((object) => {
@@ -40,6 +45,7 @@ function Board() {
       playDrop();
       console.log('dropped sound');
     } else if (newWasteArray.length === 0) {
+      playTada();
       setShowModal(true);
       setStartSorting(false);
       newWasteArray = [...wasteToSort];
