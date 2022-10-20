@@ -6,17 +6,12 @@ const Timer = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div>
+        {/* TODO: disable Start when startSorting is true. When array is empty counting is to stop and display result on screen */}
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
           onClick={start}
         >
           start
-        </button>
-        <button
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-          onClick={reset}
-        >
-          reset
         </button>
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
