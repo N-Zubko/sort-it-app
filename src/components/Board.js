@@ -10,13 +10,12 @@ import Timer from './Timer';
 import Modal from './Modal';
 
 import { Context } from './Context.js';
-
 import { wasteToSort } from './ItemTypes';
 
 import BackgroundImage from '../pictures/background.jpg';
 import DropSound from '../sounds/falling_garbage.wav';
 import TadaSound from '../sounds/tada.wav';
-import WasteSound from '../sounds/waste.mp3';
+import WasteSound from '../sounds/waste.wav';
 
 let newWasteArray = [...wasteToSort];
 
@@ -42,8 +41,7 @@ function Board() {
   useEffect(() => {
     if (newWasteArray.length > 0) {
       setWasteDisplay([...newWasteArray]);
-      playDrop();
-      console.log('dropped sound');
+      if (startSorting) playDrop();
     } else if (newWasteArray.length === 0) {
       playTada();
       setShowModal(true);
