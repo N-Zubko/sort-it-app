@@ -12,7 +12,8 @@ import { Context } from './Context.js';
 
 import { wasteToSort } from './ItemTypes';
 import BackgroundImage from '../pictures/background.jpg';
-
+import DropSound from '../sounds/falling_garbage.wav';
+import useSound from 'use-sound';
 let newWasteArray = [...wasteToSort];
 
 function Board() {
@@ -21,6 +22,7 @@ function Board() {
   const [itemAdded, setItemAdded] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [seconds, setSeconds] = useState(0);
+  const [playDrop] = useSound(DropSound);
 
   const reduceWasteDisplay = (id) => {
     const indexOfObject = newWasteArray.findIndex((object) => {
@@ -35,6 +37,8 @@ function Board() {
   useEffect(() => {
     if (newWasteArray.length > 0) {
       setWasteDisplay([...newWasteArray]);
+      playDrop();
+      console.log('dropped sound');
     } else if (newWasteArray.length === 0) {
       setShowModal(true);
       setStartSorting(false);

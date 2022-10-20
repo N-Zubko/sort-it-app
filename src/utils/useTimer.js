@@ -1,7 +1,10 @@
 import { useCallback, useState, useContext, useEffect } from 'react';
+import useSound from 'use-sound';
+
 import { interval } from './interval';
 import { Context } from '../components/Context';
 import { wasteToSort } from '../components/ItemTypes';
+import BellSound from '../sounds/bell.wav';
 
 const use1Second = interval(1e3);
 
@@ -14,6 +17,7 @@ export const useTimer = ({
   const { seconds, setSeconds } = useContext(Context);
   const { startSorting, setStartSorting } = useContext(Context);
   const { showModal, setShowModal } = useContext(Context);
+  const [playStart] = useSound(BellSound);
 
   const tick = useCallback(
     () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
@@ -21,6 +25,7 @@ export const useTimer = ({
   );
 
   const start = () => {
+    playStart();
     setRunning(true);
     setStartSorting(true);
   };
