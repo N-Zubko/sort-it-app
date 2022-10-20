@@ -4,6 +4,21 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useOutletContext } from 'react-router-dom';
 import Input from '../components/Input';
+// import { gql, useMutation } from '@apollo/client';
+import toast from 'react-hot-toast';
+
+// const UPDATE_USER_MUTATION = gql`
+//   mutation ($id: uuid, $displayName: String!, $metadata: jsonb) {
+//     updateUser(
+//       pk_columns: { id: $id }
+//       _set: { displayName: $displayName, metadata: $metadata }
+//     ) {
+//       id
+//       displayName
+//       metadata
+//     }
+//   }
+// `;
 
 const Profile = () => {
   const { user } = useOutletContext();
@@ -15,8 +30,27 @@ const Profile = () => {
   const isLastNameDirty = lastName !== user?.metadata?.lastName;
   const isProfileFormDirty = isFirstNameDirty || isLastNameDirty;
 
-  const updateUserProfile = async e => {
+  // const [mutateUser, { loading: updatingProfile }] =
+  //   useMutation(UPDATE_USER_MUTATION);
+
+  const updateUserProfile = async (e) => {
     e.preventDefault();
+
+    // try {
+    //   await mutateUser({
+    //     variables: {
+    //       id: user.id,
+    //       displayName: `${firstName} ${lastName}`.trim(),
+    //       metadata: {
+    //         firstName,
+    //         lastName,
+    //       },
+    //     },
+    //   });
+    //   toast.success('Updated successfully', { id: 'updateProfile' });
+    // } catch (error) {
+    //   toast.error('Unable to update profile', { id: 'updateProfile' });
+    // }
   };
 
   return (
@@ -39,14 +73,15 @@ const Profile = () => {
                   type="text"
                   label="First name"
                   value={firstName}
-                  onChange={e => setFirstName(e.target.value)}
+                  onChange={(e) => setFirstName(e.target.value)}
                   required
+                  // disabled={updatingProfile}
                 />
                 <Input
                   type="text"
                   label="Last name"
                   value={lastName}
-                  onChange={e => setLastName(e.target.value)}
+                  onChange={(e) => setLastName(e.target.value)}
                   required
                 />
               </div>
