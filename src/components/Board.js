@@ -6,6 +6,8 @@ import BlackBin from './BlackBin';
 import GreenBin from './GreenBin';
 import Landfill from './Landfill';
 import Timer from './Timer';
+import Modal from './Modal';
+
 import { Context } from './Context.js';
 
 import { wasteToSort } from './ItemTypes';
@@ -17,6 +19,8 @@ function Board() {
   const [startSorting, setStartSorting] = useState(false);
   const [wasteDisplay, setWasteDisplay] = useState([]);
   const [itemAdded, setItemAdded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [seconds, setSeconds] = useState(0);
 
   const reduceWasteDisplay = (id) => {
     const indexOfObject = newWasteArray.findIndex((object) => {
@@ -28,10 +32,13 @@ function Board() {
     setWasteDisplay([...newWasteArray]);
     return;
   };
-
   useEffect(() => {
     if (newWasteArray.length > 0) {
       setWasteDisplay([...newWasteArray]);
+    } else if (newWasteArray.length === 0) {
+      setShowModal(true);
+      setStartSorting(false);
+      newWasteArray = [...wasteToSort];
     } else {
       newWasteArray = [...wasteToSort];
       setStartSorting(false);
@@ -47,8 +54,13 @@ function Board() {
         setWasteDisplay,
         itemAdded,
         setItemAdded,
+        showModal,
+        setShowModal,
+        seconds,
+        setSeconds,
       }}
     >
+      <Modal />
       <div
         className="flex flex-col justify-center content-end h-screen w-screen"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
@@ -67,13 +79,9 @@ function Board() {
               {wasteDisplay[0].name}
             </span>
           </div>
-        ) : !startSorting ? (
-          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-52">
-            Click Start
-          </span>
         ) : (
           <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-52">
-            ALL DONE!
+            Click Start
           </span>
         )}
         <div className="flex flex-row flex-wrap justify-center content-end items-end">
