@@ -30,7 +30,7 @@ export default function GreenBin({ reduceWasteDisplay, wasteDisplay }) {
     setGreenBin((board) => [...board, toSort[0]]);
     setTimeout(() => {
       setItemAdded(false);
-    }, 1500);
+    }, 300);
     //show only one
     // setGreenBin([toSort[0]]);
   };

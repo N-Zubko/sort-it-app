@@ -12,7 +12,6 @@ const style = {
 
 export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
   const [blueBin, setBlueBin] = useState([]);
-  // const [itemAdded, setItemAdded] = useState(false);
   const { itemAdded, setItemAdded } = useContext(Context);
 
   const [{ isOver }, drop] = useDrop(() => ({
@@ -31,7 +30,7 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
     setBlueBin((board) => [...board, toSort[0]]);
     setTimeout(() => {
       setItemAdded(false);
-    }, 1500);
+    }, 300);
     //show only one
     // setBlueBin([toSort[0]]);
   };

@@ -30,7 +30,7 @@ export default function BlueBin({ reduceWasteDisplay, wasteDisplay }) {
     setBlackBin((board) => [...board, toSort[0]]);
     setTimeout(() => {
       setItemAdded(false);
-    }, 1500);
+    }, 300);
     //show only one
     // setBlackBin([toSort[0]]);
   };

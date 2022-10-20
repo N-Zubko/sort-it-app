@@ -31,7 +31,7 @@ export default function Landfill({ reduceWasteDisplay, wasteDisplay }) {
     setLandfill((board) => [...board, toSort[0]]);
     setTimeout(() => {
       setItemAdded(false);
-    }, 1500);
+    }, 300);
     //show only one
     // setLandfill([toSort[0]]);
   };
