@@ -35,6 +35,10 @@
 
 ## Sorting in action:
 
+First draft:
 https://user-images.githubusercontent.com/63440229/195511187-9b056cb6-e2a5-469c-84c9-9e423eadfe5f.mov
+
+Current state:
+https://user-images.githubusercontent.com/63440229/197094991-d744f2e0-afed-4bed-b644-222f2568b756.mov
 
 
