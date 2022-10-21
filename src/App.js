@@ -22,8 +22,8 @@ function App() {
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
         <Routes>
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="sign-in" element={<SignIn />} />
+          {/* <Route path="sign-up" element={<SignUp />} />
+          <Route path="sign-in" element={<SignIn />} /> */}
           <Route
             path="/"
             element={
@@ -33,10 +33,12 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
-            <Route path="profile" element={<Profile />} />
+            <Route path="about" element={<About />} />
+            <Route path="learn" element={<Learn />} />
+            {/* <Route path="profile" element={<Profile />} /> */}
           </Route>
-          <Route path="about" element={<About />} />
-          <Route path="learn" element={<Learn />} />
+          {/* <Route path="about" element={<About />} />
+          <Route path="learn" element={<Learn />} /> */}
         </Routes>
       </BrowserRouter>
       <Toaster />
