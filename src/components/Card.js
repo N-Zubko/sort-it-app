@@ -4,10 +4,10 @@ const style = {
 };
 
 const carts = {
-  recycle: 'Blue Cart',
-  garbage: 'Black Cart',
-  compost: 'Green Cart',
-  landfill: 'Landfill Drop-off',
+  recycle: ['Blue Cart', 'bg-blue-200'],
+  garbage: ['Black Cart', 'bg-zinc-300'],
+  compost: ['Green Cart', 'bg-emerald-100'],
+  landfill: ['Landfill Drop-off', 'bg-pink-200'],
 };
 
 function FrontOfCard({ id, name, url }) {
@@ -20,9 +20,11 @@ function FrontOfCard({ id, name, url }) {
 }
 
 function BackOfCard({ name, description, wasteType }) {
-  const cart = carts[wasteType];
+  const cart = carts[wasteType][0];
+  const bgcolor = carts[wasteType][1];
+  const className = `absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center transition-all z-10 wasteCardBack ${bgcolor}`;
   return (
-    <div className="absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center bg-amber-100 transition-all z-10 wasteCardBack">
+    <div className={className}>
       <h3 className="text-lg font-semibold capitalize">{name}</h3>
       <p>{description}</p>
       <span>Goes to: {cart}</span>
