@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import Input from '../components/Input';
-import Spinner from '../components/Spinner';
+// import Spinner from '../components/Spinner';
 import { Card } from '../components/Card';
 import { wasteToSort } from '../components/ItemTypes';
 

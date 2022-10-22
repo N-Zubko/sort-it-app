@@ -1,41 +1,11 @@
-import styles from '../styles/components/Layout.module.css';
-
-// import { Fragment } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import Footer from '../components/Footer';
-// import { Menu, Transition } from '@headlessui/react';
 import { useSignOut } from '@nhost/react';
-
-import {
-  ChevronDownIcon,
-  HomeIcon,
-  LogoutIcon,
-  UserIcon,
-} from '@heroicons/react/outline';
-// import Avatar from './Avatar';
 
 const Layout = () => {
   const user = null;
 
   const { signOut } = useSignOut();
-
-  const menuItems = [
-    {
-      label: 'Dashboard',
-      href: '/',
-      icon: HomeIcon,
-    },
-    {
-      label: 'Profile',
-      href: '/profile',
-      icon: UserIcon,
-    },
-    {
-      label: 'Logout',
-      onClick: signOut,
-      icon: LogoutIcon,
-    },
-  ];
 
   return (
     <>
@@ -70,8 +40,8 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
-      <main className={styles.main}>
-        <div className={styles['main-container']}>
+      <main>
+        <div>
           <Outlet context={{ user }} />
         </div>
       </main>
