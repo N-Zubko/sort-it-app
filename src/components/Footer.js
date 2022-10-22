@@ -5,7 +5,7 @@ import { LibraryIcon } from '@heroicons/react/outline';
 
 const Footer = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center">
+    <div className="flex flex-row flex-wrap justify-center items-center">
       <footer className="text-center">
         Sort_it! app developed with ❤️ by Nadia Zubko © 2022
       </footer>
@@ -14,14 +14,14 @@ const Footer = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <GitHubIcon />
+        <GitHubIcon className="ml-1" />
       </a>
       <a
         href="https://www.linkedin.com/in/nadezhda-zubko-developer/"
         target="_blank"
         rel="noreferrer"
       >
-        <LinkedInIcon />
+        <LinkedInIcon className="ml-1" />
       </a>
     </div>
   );
