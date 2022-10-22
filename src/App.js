@@ -5,7 +5,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
-import Dashboard from './pages/Dashboard';
+import PlayPage from './pages/PlayPage';
 import Profile from './pages/Profile';
 import About from './pages/About';
 import Learn from './pages/Learn';
@@ -32,7 +32,7 @@ function App() {
               // </ProtectedRoute>
             }
           >
-            <Route index element={<Dashboard />} />
+            <Route index element={<PlayPage />} />
             <Route path="about" element={<About />} />
             <Route path="learn" element={<Learn />} />
             {/* <Route path="profile" element={<Profile />} /> */}
