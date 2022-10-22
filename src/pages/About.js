@@ -35,8 +35,8 @@ const About = () => {
       <section className="text-center mt-4 mb-2">
         <h2 className="mt-2 text-base">Technologies used:</h2>
         <p>
-          ReactJS, React Dnd library for drag and drop, Nhost, PostgreSQL,
-          GraphQL, Tailwind
+          ReactJS, React Dnd library for drag and drop, PostgreSQL, GraphQL,
+          Tailwind, Netlify to host the front-end, Nhost to host the back-end.
         </p>
       </section>
       <section className="flex flex-col items-center mb-60">
