@@ -70,7 +70,7 @@ function Board() {
     >
       <Modal />
       <div
-        className="flex flex-col justify-center content-end h-screen w-screen"
+        className="flex flex-col flex-wrap items-center justify-center h-screen w-screen"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
         <Timer />
@@ -88,7 +88,7 @@ function Board() {
             </span>
           </div>
         ) : (
-          <span className="inline-block align-middle text-center mt-2 bg-white h-14 mb-52">
+          <span className="inline-block align-middle text-center mt-2 pt-2 pb-2 pl-36 pr-36 bg-white h-14 mb-52">
             Click Start
           </span>
         )}

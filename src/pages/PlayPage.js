@@ -9,7 +9,7 @@ const PlayPage = () => {
   const { user } = useOutletContext();
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col flex-wrap items-center justify-center">
       <DndProvider backend={HTML5Backend}>
         <Helmet>
           <title>Sort_it!</title>
