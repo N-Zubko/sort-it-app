@@ -12,7 +12,7 @@ const PlayPage = () => {
     <div className="flex flex-col items-center justify-center">
       <DndProvider backend={HTML5Backend}>
         <Helmet>
-          <title>Dashboard - Nhost</title>
+          <title>Sort_it!</title>
         </Helmet>
         <Board />
       </DndProvider>
