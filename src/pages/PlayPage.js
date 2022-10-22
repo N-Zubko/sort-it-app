@@ -5,7 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Board from '../components/Board';
 
-const Dashboard = () => {
+const PlayPage = () => {
   const { user } = useOutletContext();
 
   return (
@@ -20,4 +20,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default PlayPage;
