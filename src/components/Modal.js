@@ -1,10 +1,10 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { Context } from './Context';
 
 export default function Modal() {
   //   const [showModal, setShowModal] = useState(false);
   const { showModal, setShowModal } = useContext(Context);
-  const { seconds, setSeconds } = useContext(Context);
+  const { seconds } = useContext(Context);
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function Modal() {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    Your time is {seconds}
+                    Your time is {seconds} seconds
                   </p>
                 </div>
                 {/*footer*/}
