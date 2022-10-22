@@ -42,7 +42,7 @@ const Layout = () => {
       {/* TODO: Add Sort_it! logo to the page top, left of the nav bar 
       🗑️ icon for the logo
       */}
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mb-1">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mb-2">
         <ul className="flex flex-row flex-wrap justify-end mr-10">
           <li className="mr-3">
             <NavLink
