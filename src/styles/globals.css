@@ -65,3 +65,12 @@ button {
   background-color: transparent;
   background-image: none;
 }
+
+.wasteCard:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.wasteCardBack {
+  transform: rotateY(180deg);
+}
