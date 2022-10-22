@@ -25,11 +25,11 @@
 | 6   | Animation when item is put into the right cart | :heavy_check_mark:|
 | 7   | Time result can is displayed on the board | :heavy_check_mark:|
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use | :heavy_check_mark:|
-| 9   | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
-| 10  | Netlify/Railway to deploy the front-end part of the app |             |
-| 11  | Add favicon and change title | :heavy_check_mark:|
+| 9   | Add favicon and change title | :heavy_check_mark:|
+| 10  | Add About Page | :heavy_check_mark:| 
+| 11  | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
 | 12  | Time result is stored and top 10 results are displayed |  |
-| 13  | Add About Page | :heavy_check_mark:|
+| 13  | Netlify/Railway to deploy the front-end part of the app |             |
 | 14  | Sounds can be turned on/off |             |
 
 
