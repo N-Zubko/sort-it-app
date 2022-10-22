@@ -1,9 +1,9 @@
 import styles from '../styles/components/Layout.module.css';
 
-import Navigation from './Navigation';
-import { Fragment } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { Menu, Transition } from '@headlessui/react';
+// import { Fragment } from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
+import Footer from '../components/Footer';
+// import { Menu, Transition } from '@headlessui/react';
 import { useSignOut } from '@nhost/react';
 
 import {
@@ -12,7 +12,7 @@ import {
   LogoutIcon,
   UserIcon,
 } from '@heroicons/react/outline';
-import Avatar from './Avatar';
+// import Avatar from './Avatar';
 
 const Layout = () => {
   const user = null;
@@ -38,67 +38,45 @@ const Layout = () => {
   ];
 
   return (
-    <div>
-      {/* <header className={styles.header}>
-        <div className={styles['header-container']}>
-          <Link to="/">
-            <img src={process.env.PUBLIC_URL + 'logo.svg'} alt="logo" />
-          </Link>
-
-          <Menu as="div" className={styles.menu}>
-            <Menu.Button className={styles['menu-button']}>
-              <Avatar src={user?.avatarUrl} alt={user?.displayName} />
-              <ChevronDownIcon />
-            </Menu.Button>
-            <Transition
-              as={Fragment}
-              enter={styles['menu-transition-enter']}
-              enterFrom={styles['menu-transition-enter-from']}
-              enterTo={styles['menu-transition-enter-to']}
-              leave={styles['menu-transition-leave']}
-              leaveFrom={styles['menu-transition-leave-from']}
-              leaveTo={styles['menu-transition-leave-to']}
+    <>
+      {/* TODO: Add Sort_it! logo to the page top, left of the nav bar 
+      🗑️ icon for the logo
+      */}
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mb-1">
+        <ul className="flex flex-row flex-wrap justify-end mr-10">
+          <li className="mr-3">
+            <NavLink
+              to="/about"
+              className="text-white bg-gradient-to-br from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
             >
-              <Menu.Items className={styles['menu-items-container']}>
-                <div className={styles['menu-header']}>
-                  <Avatar src={user?.avatarUrl} alt={user?.displayName} />
-                  <div className={styles['user-details']}>
-                    <span>{user?.displayName}</span>
-                    <span className={styles['user-email']}>{user?.email}</span>
-                  </div>
-                </div>
-
-                <div className={styles['menu-items']}>
-                  {menuItems.map(({ label, href, onClick, icon: Icon }) => (
-                    <div key={label} className={styles['menu-item']}>
-                      <Menu.Item>
-                        {href ? (
-                          <Link to={href}>
-                            <Icon />
-                            <span>{label}</span>
-                          </Link>
-                        ) : (
-                          <button onClick={onClick}>
-                            <Icon />
-                            <span>{label}</span>
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  ))}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
-        </div>
-      </header> */}
-      <Navigation />
+              About
+            </NavLink>
+          </li>
+          <li className="mr-3">
+            <NavLink
+              to="/"
+              className="text-white bg-gradient-to-br from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            >
+              Play
+            </NavLink>
+          </li>
+          <li className="mr-3">
+            <NavLink
+              to="/learn"
+              className="text-white bg-gradient-to-br from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            >
+              Learn
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
       <main className={styles.main}>
         <div className={styles['main-container']}>
           <Outlet context={{ user }} />
         </div>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 };
 
