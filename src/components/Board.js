@@ -98,7 +98,7 @@ function Board() {
               wasteDisplay={wasteDisplay}
               reduceWasteDisplay={reduceWasteDisplay}
             />
-            <span className="bg-white pl-2 pr-2">Landfill drop-off</span>
+            <span className="bg-white pl-2 pr-2">Landfill Drop-off</span>
           </div>
           <div className="text-center drop-shadow-lg">
             <BlueBin
