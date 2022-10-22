@@ -1,5 +1,5 @@
 # Sort_it!
-
+ ### Live app: [https://moonlit-sawine-d4bd1d.netlify.app/](https://moonlit-sawine-d4bd1d.netlify.app/)
 
 ## Description
 
@@ -29,7 +29,7 @@
 | 10  | Add About Page | :heavy_check_mark:| 
 | 11  | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
 | 12  | Time result is stored and top 10 results are displayed |  |
-| 13  | Netlify/Railway to deploy the front-end part of the app |             |
+| 13  | Netlify/Railway to deploy the front-end part of the app | :heavy_check_mark: |
 | 14  | Sounds can be turned on/off |             |
 
 
