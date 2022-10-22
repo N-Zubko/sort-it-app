@@ -5,7 +5,9 @@ import { wasteToSort } from '../components/ItemTypes';
 const Learn = () => {
   return (
     <>
-      <h2 className="text-center mb-2 text-lg">Learn How to Sort Waste</h2>
+      <h2 className="text-center mb-2 text-lg font-semibold">
+        Learn How to Sort Waste
+      </h2>
       <div className="grid grid-rows-4 grid-flow-col gap-4 ml-5 mr-5">
         {wasteToSort.map((item) => (
           <Card
