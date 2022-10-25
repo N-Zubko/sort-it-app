@@ -8,7 +8,7 @@ import { WasteQuery } from '../graphQL/WasteQuery';
 const PlayPage = () => {
   return (
     <div className="flex flex-col flex-wrap items-center justify-center">
-      <WasteQuery />
+      {/* <WasteQuery /> */}
 
       <DndProvider backend={HTML5Backend}>
         <Helmet>
