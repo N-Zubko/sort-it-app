@@ -1,12 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import Footer from '../components/Footer';
-import { useSignOut } from '@nhost/react';
 
 const Layout = () => {
-  const user = null;
-
-  const { signOut } = useSignOut();
-
   return (
     <>
       {/* TODO: Add Sort_it! logo to the page top, left of the nav bar 
@@ -42,7 +37,7 @@ const Layout = () => {
       </nav>
       <main>
         <div>
-          <Outlet context={{ user }} />
+          <Outlet />
         </div>
       </main>
       <Footer />
