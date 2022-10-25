@@ -12,7 +12,7 @@ const carts = {
 
 function FrontOfCard({ id, name, url }) {
   return (
-    <div className="absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center bg-slate-200 transition-all duration-100 delay-200 z-20 hover:opacity-0">
+    <div className="absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center bg-slate-200 transition-all duration-100 delay-200 z-20 hover:opacity-0 m-2">
       <img src={url} alt={name} style={style} />
       <span>{name}</span>
     </div>
@@ -22,7 +22,7 @@ function FrontOfCard({ id, name, url }) {
 function BackOfCard({ name, description, wasteType }) {
   const cart = carts[wasteType][0];
   const bgcolor = carts[wasteType][1];
-  const className = `absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center transition-all z-10 wasteCardBack ${bgcolor}`;
+  const className = `absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center transition-all z-10 wasteCardBack ${bgcolor} m-1`;
   return (
     <div className={className}>
       <h3 className="text-lg font-semibold capitalize">{name}</h3>
