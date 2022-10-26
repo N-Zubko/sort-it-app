@@ -1,23 +1,49 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { NhostApolloProvider } from '@nhost/react-apollo';
 
 import Layout from './components/Layout';
 import PlayPage from './pages/PlayPage';
 import About from './pages/About';
 import Learn from './pages/Learn';
 
-import { NhostClient, NhostReactProvider } from '@nhost/react';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-const nhost = new NhostClient({
-  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
-  region: process.env.REACT_APP_NHOST_REGION,
+// URI for graphql API on back4app
+const httpLink = createHttpLink({
+  uri: 'https://parseapi.back4app.com/graphql',
 });
-// console.log('nhost', nhost);
+
+const APPLICATION_ID = process.env.REACT_APP_APPLICATION_ID;
+const MASTER_KEY = process.env.REACT_APP_MASTER_KEY;
+const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
+
+const headersLink = setContext((_, { headers }) => {
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      'X-Parse-Application-Id': APPLICATION_ID,
+      'X-Parse-Master-Key': MASTER_KEY,
+      'X-Parse-REST-API-Key': REST_API_KEY,
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: headersLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <NhostReactProvider nhost={nhost}>
-      <NhostApolloProvider nhost={nhost}>
+    <>
+      <ApolloProvider client={client}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -28,8 +54,8 @@ function App() {
           </Routes>
         </BrowserRouter>
         <Toaster />
-      </NhostApolloProvider>
-    </NhostReactProvider>
+      </ApolloProvider>
+    </>
   );
 }
 
