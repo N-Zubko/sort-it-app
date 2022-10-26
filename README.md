@@ -27,7 +27,7 @@
 | 8   | Learn page contains all waste types in flashcards with names, pictures and description on which bin to use | :heavy_check_mark:|
 | 9   | Add favicon and change title | :heavy_check_mark:|
 | 10  | Add About Page | :heavy_check_mark:| 
-| 11  | Waste items are stored in a PostgreSQL database at Nhost and fetched using GraphQL |             |
+| 11  | Waste items are stored in MongoDB at Back4app and fetched using GraphQL | :heavy_check_mark:|
 | 12  | Time result is stored and top 10 results are displayed |  |
 | 13  | Netlify/Railway to deploy the front-end part of the app | :heavy_check_mark: |
 | 14  | Sounds can be turned on/off |             |
