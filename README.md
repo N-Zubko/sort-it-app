@@ -30,7 +30,10 @@
 | 11  | Waste items are stored in MongoDB at Back4app and fetched using GraphQL | :heavy_check_mark:|
 | 12  | Time result is stored and top 10 results are displayed |  |
 | 13  | Netlify/Railway to deploy the front-end part of the app | :heavy_check_mark: |
-| 14  | Sounds can be turned on/off |             |
+| 14  | Sounds and animation can be turned on/off |             |
+| 15  | Move from ReactDnd to a mobile-friendly library |             |
+| 16  | Populate the waste database with more items to be sorted |             |
+
 
 
 
