@@ -40,8 +40,8 @@ const About = () => {
         <h2 className="mt-2 text-base">Technologies used:</h2>
         <p>
           ReactJS, React Dnd library for drag and drop, MongoDB, GraphQL,
-          Tailwind, Netlify to host the front-end, Back4app to host the
-          back-end.
+          Tailwind, Netlify to host the front-end, Back4app to host the back-end
+          and the database.
         </p>
       </section>
       <section className="flex flex-col items-center mb-60">
