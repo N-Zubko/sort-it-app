@@ -22,7 +22,7 @@ function FrontOfCard({ id, name, url }) {
 function BackOfCard({ name, description, wasteType }) {
   const cart = carts[wasteType][0];
   const bgcolor = carts[wasteType][1];
-  const className = `absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center transition-all z-10 wasteCardBack ${bgcolor} m-1`;
+  const className = `absolute inset-0 w-full h-full flex flex-col gap-2 justify-center items-center transition-all z-10 wasteCardBack ${bgcolor} m-1 p-2`;
   return (
     <div className={className}>
       <h3 className="text-lg font-semibold capitalize">{name}</h3>
