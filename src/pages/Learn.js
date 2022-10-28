@@ -1,7 +1,9 @@
 import { Card } from '../components/Card';
 import { useQuery } from '@apollo/client';
-import { GET_WASTE_DETAILED } from '../graphql/WasteQuery';
 import Spinner from '../components/Spinner';
+import { loader } from 'graphql.macro';
+
+const GET_WASTE_DETAILED = loader('../graphql/wasteDetailed.graphql');
 
 const Learn = () => {
   const { loading, error, data } = useQuery(GET_WASTE_DETAILED);

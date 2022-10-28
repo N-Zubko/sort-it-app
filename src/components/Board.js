@@ -11,12 +11,14 @@ import Modal from './Modal';
 
 import { Context } from './Context.js';
 import { useQuery } from '@apollo/client';
-import { GET_WASTE } from '../graphql/WasteQuery';
+import { loader } from 'graphql.macro';
 
 import Spinner from './Spinner';
 import BackgroundImage from '../pictures/background.jpg';
 import TadaSound from '../sounds/tada.wav';
 import WasteSound from '../sounds/waste.wav';
+
+const GET_WASTE = loader('../graphql/waste.graphql');
 
 function Board() {
   const [startSorting, setStartSorting] = useState(false);
