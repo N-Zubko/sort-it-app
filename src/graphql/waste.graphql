@@ -1,0 +1,14 @@
+query Waste {
+  wasteToSorts {
+    edges {
+      node {
+        objectId
+        name
+        wasteType
+        image {
+          url
+        }
+      }
+    }
+  }
+}
