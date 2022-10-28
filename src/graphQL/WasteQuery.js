@@ -1,4 +1,6 @@
 import { gql } from '@apollo/client';
+// import { useState, useEffect } from 'react';
+// import { useQuery } from '@apollo/client';
 
 export const GET_WASTE = gql`
   query Waste {
@@ -7,8 +9,10 @@ export const GET_WASTE = gql`
         node {
           objectId
           name
-          description
           wasteType
+          image {
+            url
+          }
         }
       }
     }
