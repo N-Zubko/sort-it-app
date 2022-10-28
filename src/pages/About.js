@@ -30,6 +30,10 @@ const About = () => {
           <p>
             You can learn about waste on <code>Learn</code> page.
           </p>
+          <p>
+            Important: due to React Dnd the app will not work correctly on
+            mobile devices.
+          </p>
         </article>
       </section>
       <section className="text-center mt-4 mb-2">
