@@ -60,14 +60,16 @@ function Board() {
       value={{
         startSorting,
         setStartSorting,
-        wasteDisplay,
-        setWasteDisplay,
         itemAdded,
         setItemAdded,
         showModal,
         setShowModal,
         seconds,
         setSeconds,
+        count,
+        setCount,
+        showWasteDisplay,
+        setShowWasteDisplay,
       }}
     >
       <Modal />
