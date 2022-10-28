@@ -3,7 +3,6 @@ import useSound from 'use-sound';
 
 import { interval } from './interval';
 import { Context } from '../components/Context';
-import { wasteToSort } from '../components/ItemTypes';
 import BellSound from '../sounds/bell.wav';
 
 const use1Second = interval(1e3);
