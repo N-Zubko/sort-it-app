@@ -47,7 +47,7 @@ const About = () => {
       <section className="flex flex-col items-center mb-60">
         <h2 className="text-center mt-2">Developed by:</h2>
         <img
-          src="https://the-collab-lab.codes/assets/img/members/Nadia-Zubko.jpeg"
+          src="https://the-collab-lab.codes/img/members/Nadia-Zubko.jpeg"
           alt="Nadia Zubko, the developer"
           className="rounded-full w-36 h-36"
         />
